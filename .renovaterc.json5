@@ -1,0 +1,4 @@
+{
+  // Renovate defaults to skipping forks. Explicit opt-in here.
+  forkProcessing: "enabled",
+}
