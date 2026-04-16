@@ -2,12 +2,12 @@ use std::{
     ffi::OsString,
     fs,
     io::{BufRead, BufReader},
-    process::{exit, Command, Stdio},
+    process::{Command, Stdio, exit},
     sync::{Arc, Mutex},
     thread,
 };
 
-use chrono::{offset::Local, DateTime, Duration};
+use chrono::{DateTime, Duration, offset::Local};
 use cron::OwnedScheduleIterator;
 
 /// Description and state of a job.
