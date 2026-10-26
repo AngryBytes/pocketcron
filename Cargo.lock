@@ -58,9 +58,8 @@ checksum = "773648b94d0e5d620f64f280777445740e61fe701025087ec8b57f45c791888b"
 
 [[package]]
 name = "cron"
-version = "0.16.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "089df96cf6a25253b4b6b6744d86f91150a3d4df546f31a95def47976b8cba97"
+version = "0.17.0"
+source = "git+https://github.com/zslayton/cron?rev=cf2dc1d519246de9ad230d33de2b7cd65e30305e#cf2dc1d519246de9ad230d33de2b7cd65e30305e"
 dependencies = [
  "chrono",
  "once_cell",

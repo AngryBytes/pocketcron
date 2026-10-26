@@ -8,4 +8,5 @@ repository = "https://github.com/stephank/pocketcron"
 
 [dependencies]
 chrono = { version = "0.4.26", default-features = false, features = ["clock"] }
-cron = "0.16.0"
+# Unreleased fix for the DST fall-back hang (zslayton/cron#145). Switch back to a crates.io release once one includes it.
+cron = { git = "https://github.com/zslayton/cron", rev = "cf2dc1d519246de9ad230d33de2b7cd65e30305e" }
