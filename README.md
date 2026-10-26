@@ -10,6 +10,4 @@ A tiny cronjob runner. Great as a 'sidecar' process in your application.
 - Supports only the user crontab format. (No username field, like in system
   crontab files.)
 
-- Schedules are always in UTC, regardless of the system time zone.
-
 - Not a deamon. Always runs in the foreground.

@@ -7,7 +7,7 @@ use std::{
     thread,
 };
 
-use chrono::{DateTime, Duration, Utc};
+use chrono::{DateTime, Duration, offset::Local};
 use cron::OwnedScheduleIterator;
 
 /// Description and state of a job.
@@ -15,9 +15,9 @@ struct Job {
     /// Job index, used as identifier for logging.
     id: usize,
     /// Schedule iterator.
-    upcoming: OwnedScheduleIterator<Utc>,
+    upcoming: OwnedScheduleIterator<Local>,
     /// Next time this job will run.
-    next: Option<DateTime<Utc>>,
+    next: Option<DateTime<Local>>,
     /// Shell command.
     command: String,
     /// Whether the process is running.
@@ -40,7 +40,7 @@ fn main() {
     }
 
     loop {
-        let now = Utc::now();
+        let now = Local::now();
 
         // Find the minimum of all jobs' `next` time.
         // Max sleep is 1 minute, to account for any clock jumps.
@@ -88,7 +88,7 @@ fn load_jobs(jobs: &mut Vec<JobHandle>, path: OsString) {
     };
 
     // Read by line.
-    let now = Utc::now();
+    let now = Local::now();
     for (line_no, line) in BufReader::new(file).lines().enumerate() {
         let line = match line {
             Ok(line) => line,
