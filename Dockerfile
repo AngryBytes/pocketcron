@@ -1,7 +1,7 @@
 FROM rust AS build
 WORKDIR /usr/src/pocketcron
 COPY . .
-RUN cargo install --path .
+RUN cargo install --locked --path .
 
 FROM debian
 COPY --from=build \
